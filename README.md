@@ -2,7 +2,10 @@
 
 The professional site of a clinical research director, medical writer, and data
 systems architect — a modern illuminated manuscript crossed with soft retro
-computing. Plain HTML/CSS/JS; no framework, no build step.
+computing. Plain HTML/CSS/JS; no framework, no build step. Professional portfolio website showcasing clinical research,
+scientific communication,
+interactive visualizations,
+and whimsical educational software.
 
 ## Structure
 
