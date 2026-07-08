@@ -46,6 +46,10 @@ and whimsical educational software.
   - `images/raven-dragon.png` — watercolor raven atop dragon (Contact)
   - `images/quill-mark.png` — line-art quill-and-dragon mark (About sidebar)
 
+## Status
+
+🚧 Prototype
+
 ## Local preview
 
 Any static server works, e.g.:
