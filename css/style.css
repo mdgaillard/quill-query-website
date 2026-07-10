@@ -83,12 +83,12 @@ a, button { cursor: pointer; }
 .site-header .inner {
   max-width: var(--measure);
   margin: 0 auto;
-  padding: 16px 28px;
+  padding: 10px 28px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px 24px;
+  gap: 8px 24px;
 }
 
 .brand {
@@ -262,7 +262,25 @@ a, button { cursor: pointer; }
 .eyebrow-mirror { margin: 38px 0 0; }
 
 /* Slim hero variant for interior pages */
-.page-head { padding: 80px 28px 0; max-width: var(--measure); margin: 0 auto; }
+.page-head {
+  padding: 80px 28px 0;
+  max-width: var(--measure);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.page-head-text { flex: 1; min-width: 0; }
+.page-icon {
+  height: 74px;
+  width: auto;
+  flex: none;
+  align-self: center;
+}
+@media (max-width: 600px) {
+  .page-head { gap: 18px; }
+  .page-icon { height: 56px; }
+}
 
 /* ---------- Artwork figures (dashed frame until the file exists) ---------- */
 .art { margin: 0 auto; }
