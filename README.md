@@ -11,7 +11,7 @@ and whimsical educational software.
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home — constellation hero, thesis row, featured publications, pull-quote band |
+| `index.html` | Home — constellation hero, About Me, Meet Munin, The Data Warden game, featured publications, pull-quote band |
 | `about.html` | About — "The Library": narrative plus at-a-glance panel |
 | `archive.html` | Archive — publications list with hover-reveal summaries |
 | `map-room.html` | Map Room — vertical career timeline |
@@ -19,6 +19,7 @@ and whimsical educational software.
 | `field-notes.html` | Field Notes — coming soon |
 | `contact.html` | Contact — "Send a Raven" |
 | `404.html` | Not-found page — "The raven lost this scroll." |
+| `game/index.html` | The Data Warden — Munin's archive-guarding mini-game, embedded on the homepage |
 | `css/style.css` | Single shared stylesheet |
 | `js/main.js` | Constellation canvas, fade transitions, archive search, artwork fallbacks, publication-row reveal |
 
@@ -37,12 +38,11 @@ and whimsical educational software.
 - Timeline milestones in `map-room.html`
 - Contact email in `contact.html` (`hello@example.com`)
 - ORCID and LinkedIn links (currently inert)
-- The hoard game on the homepage (`.game-frame` in `index.html` awaits its code)
 - Artwork files, dropped into `images/` with these exact names
   (pages show an elegant dashed frame until each file exists):
   - `images/starlit-study.png` — painted starlit study desk (homepage hero)
-  - `images/quill-pixel.png` — pixel dragon asleep on gold (Meet Quill section)
-  - `images/raven-pixel.png` — pixel raven with envelope (404 page)
+  - `images/meet-munin.png` — the dragon Munin curled on his hoard (Meet Munin section)
+  - `images/raven-pixel.png` — pixel raven Quill with envelope (404 page)
   - `images/raven-dragon.png` — watercolor raven atop dragon (Contact)
   - `images/quill-mark.png` — line-art quill-and-dragon mark (About sidebar)
 
