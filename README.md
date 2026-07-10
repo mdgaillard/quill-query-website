@@ -38,13 +38,21 @@ and whimsical educational software.
 - Timeline milestones in `map-room.html`
 - Contact email in `contact.html` (`hello@example.com`)
 - ORCID and LinkedIn links (currently inert)
-- Artwork files, dropped into `images/` with these exact names
-  (pages show an elegant dashed frame until each file exists):
-  - `images/starlit-study.png` — painted starlit study desk (homepage hero)
-  - `images/meet-munin.png` — the dragon Munin curled on his hoard (Meet Munin section)
-  - `images/raven-pixel.png` — pixel raven Quill with envelope (404 page)
-  - `images/raven-dragon.png` — watercolor raven atop dragon (Contact)
-  - `images/quill-mark.png` — line-art quill-and-dragon mark (About sidebar)
+
+## Artwork (`images/`)
+
+Cast: **Munin** is the dragon (guards the hoard); **Quill** is the raven
+(carries the letters). All artwork is in place.
+
+- `images/quill-icon.png` — Munin mark, background removed to transparency;
+  sits beside the header title on every page and in the About sidebar
+- `images/starlit-study.png` — painted study desk (homepage hero)
+- `images/meet-munin.png` — Munin curled on his hoard (Meet Munin section)
+- `images/raven-pixel.png` — Quill the raven with an envelope (404 page)
+- `images/raven-dragon.png` — Quill perched on the sleeping Munin (Contact)
+
+The Data Warden mini-game is embedded on the homepage from
+`https://mdgaillard.github.io/the-data-warden/`.
 
 ## Status
 
