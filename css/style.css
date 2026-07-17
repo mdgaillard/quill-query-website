@@ -607,9 +607,11 @@ a, button { cursor: pointer; }
   padding: 8px 4px;
 }
 
-/* odd stops: image left, text right */
-.stop-figure { grid-column: 1; margin: 0; }
-.stop-body { grid-column: 2; text-align: left; }
+/* odd stops: image left, text right.
+   grid-row: 1 pins both to the same row so swapping columns on even
+   stops can't drop the text onto a second row (grid sparse packing). */
+.stop-figure { grid-column: 1; grid-row: 1; margin: 0; }
+.stop-body { grid-column: 2; grid-row: 1; text-align: left; }
 /* even stops: mirror */
 .stop:nth-child(even) .stop-figure { grid-column: 2; }
 .stop:nth-child(even) .stop-body { grid-column: 1; text-align: right; }
@@ -669,8 +671,8 @@ a, button { cursor: pointer; }
   .atlas-track { margin-top: 48px; max-width: 620px; }
   .atlas-track::before { left: 18px; }
   .stop { grid-template-columns: 1fr; row-gap: 20px; margin-bottom: 74px; padding-left: 46px; }
-  .stop-figure, .stop:nth-child(even) .stop-figure { grid-column: 1; }
-  .stop-body, .stop:nth-child(even) .stop-body { grid-column: 1; text-align: left; }
+  .stop-figure, .stop:nth-child(even) .stop-figure { grid-column: 1; grid-row: auto; }
+  .stop-body, .stop:nth-child(even) .stop-body { grid-column: 1; grid-row: auto; text-align: left; }
   .stop-node { left: 18px; top: 30px; transform: translate(-50%, 0); }
   .stop-year { font-size: clamp(38px, 12vw, 50px); }
 }
