@@ -178,4 +178,22 @@
       });
     })(pubcards[p]);
   }
+
+  /* ---------- 6. Map Room atlas: reveal stops on scroll ---------- */
+  var stops = document.querySelectorAll('.stop');
+  if (stops.length) {
+    if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+      for (var s = 0; s < stops.length; s++) stops[s].classList.add('in-view');
+    } else {
+      var io = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+      for (var q = 0; q < stops.length; q++) io.observe(stops[q]);
+    }
+  }
 })();
