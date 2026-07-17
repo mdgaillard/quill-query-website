@@ -551,7 +551,8 @@ a, button { cursor: pointer; }
 .glance dd { margin-top: 3px; font-size: 16px; color: var(--ink-soft); }
 
 /* ---------- About: name &amp; philosophy blocks ---------- */
-.about-more { max-width: 680px; margin: 72px 0 0; }
+.about-left { min-width: 0; }
+.about-more { margin: 48px 0 0; }
 .about-block + .about-block { margin-top: 52px; }
 .about-block-title {
   font-family: var(--display);
