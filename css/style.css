@@ -309,39 +309,48 @@ a, button { cursor: pointer; }
 }
 
 /* ---------- Meet Munin ---------- */
-/* ---------- Meet Munin &amp; Meet Quillon (mirrored halves) ---------- */
+/* ---------- Meet Munin &amp; Meet Quillon (mirrored, shared rows) ---------- */
 .meet-band { background: var(--parchment); border-top: 1px solid var(--lavender-soft); border-bottom: 1px solid var(--lavender-soft); }
 .meet-inner { max-width: 1160px; margin: 0 auto; padding: 84px 28px; }
-.meet-pair {
+
+/* one grid drives both columns so their rows (and the images) share y-axes */
+.meet-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 52px;
+  grid-template-columns: minmax(140px, 200px) minmax(0, 1fr) minmax(0, 1fr) minmax(140px, 200px);
+  grid-template-rows: auto auto auto auto auto;   /* head · sub · intro · list · close */
+  column-gap: 44px;
   align-items: start;
 }
-.meet-half { display: grid; align-items: center; gap: 34px; }
-.meet-munin { grid-template-columns: minmax(150px, 220px) minmax(0, 1fr); }
-.meet-quillon { grid-template-columns: minmax(0, 1fr) minmax(150px, 220px); }
-
+/* images span the full stack and center -> both sit on the same y-axis */
+.mimg { grid-column: 1; grid-row: 1 / -1; align-self: center; }
+.qimg { grid-column: 4; grid-row: 1 / -1; align-self: center; }
 .meet-art { margin: 0; }
 .meet-art img { display: block; width: 100%; border: 1px solid var(--lavender-soft); border-radius: 3px; }
 .meet-art.img-missing::after { min-height: 0; aspect-ratio: 1 / 1; width: 100%; border-radius: 3px; }
 
-.meet-heading { font-size: clamp(28px, 3.2vw, 40px); margin-bottom: 2px; }
+/* column + alignment (Munin mirrors to the divider, Quillon to the left) */
+.c-m { grid-column: 2; text-align: right; }
+.c-q { grid-column: 3; text-align: left; }
+
+/* shared rows: both columns' pieces sit in the same track, so they align */
+.r-head  { grid-row: 1; margin: 0; font-size: clamp(28px, 3.2vw, 40px); }
+.r-sub   { grid-row: 2; margin: 2px 0 0; }
+.r-intro { grid-row: 3; margin: 20px 0 0; }
+.r-list  { grid-row: 4; margin: 16px 0 0; }
+.r-close { grid-row: 5; margin: 18px 0 0; }
+
 .meet-subhead {
   font-family: var(--display);
   font-style: italic;
   font-size: clamp(17px, 1.8vw, 21px);
   color: var(--gold);
-  margin-bottom: 20px;
 }
-.meet-text p { font-size: 16.5px; line-height: 1.7; color: var(--ink-soft); }
-.meet-text p + p, .meet-text ul + p { margin-top: 1.1em; }
+.meet-p, .meet-close p { font-size: 16.5px; line-height: 1.7; color: var(--ink-soft); }
+.meet-close p + p { margin-top: 1.1em; }
 
-.meet-munin .meet-text { text-align: right; }
-.meet-quillon .meet-text { text-align: left; }
-/* mirror the gold bullets to the divider (inner) side of each column */
-.meet-munin .hoard-list li { padding-left: 0; padding-right: 30px; }
-.meet-munin .hoard-list li::before { left: auto; right: 4px; }
+/* mirror the gold bullets to the divider (inner) side of the Munin column */
+.hoard-list.c-m li { padding-left: 0; padding-right: 30px; }
+.hoard-list.c-m li::before { left: auto; right: 4px; }
 
 .meet-footnote {
   text-align: center;
@@ -354,12 +363,19 @@ a, button { cursor: pointer; }
 }
 
 @media (max-width: 900px) {
-  .meet-pair { grid-template-columns: 1fr; gap: 56px; }
-  .meet-half { display: flex; flex-direction: column; gap: 24px; align-items: stretch; }
-  .meet-half .meet-art { order: -1; max-width: 320px; margin: 0 auto; }
-  .meet-munin .meet-text, .meet-quillon .meet-text { text-align: left; }
-  .meet-munin .hoard-list li { padding-left: 30px; padding-right: 0; }
-  .meet-munin .hoard-list li::before { left: 4px; right: auto; }
+  /* stack: Munin block (image-first), then Quillon block (image-first) */
+  .meet-grid { display: flex; flex-direction: column; }
+  .c-m, .c-q { text-align: left; }
+  .meet-art { max-width: 320px; margin: 0 auto; }
+  .qimg { margin-top: 44px; }
+  .r-head { margin-top: 24px; }
+  .r-sub { margin-top: 4px; }
+  .r-intro { margin-top: 18px; }
+  .r-list { margin-top: 16px; }
+  .r-close { margin-top: 18px; }
+  .mimg { margin-top: 0; }
+  .hoard-list.c-m li { padding-left: 30px; padding-right: 0; }
+  .hoard-list.c-m li::before { left: 4px; right: auto; }
 }
 
 /* ---------- Hoard-list bullets ---------- */
