@@ -313,31 +313,32 @@ a, button { cursor: pointer; }
 .meet-band { background: var(--parchment); border-top: 1px solid var(--lavender-soft); border-bottom: 1px solid var(--lavender-soft); }
 .meet-inner { max-width: 1160px; margin: 0 auto; padding: 84px 28px; }
 
-/* one grid drives both columns so their rows (and the images) share y-axes */
+/* one grid drives both columns so their rows share y-axes; two wide text
+   columns with the image sitting immediately above each heading */
 .meet-grid {
   display: grid;
-  grid-template-columns: minmax(140px, 200px) minmax(0, 1fr) minmax(0, 1fr) minmax(140px, 200px);
-  grid-template-rows: auto auto auto auto auto;   /* head · sub · intro · list · close */
-  column-gap: 44px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto;   /* img · head · sub · intro · list · close */
+  column-gap: 60px;
   align-items: start;
 }
-/* images span the full stack and center -> both sit on the same y-axis */
-.mimg { grid-column: 1; grid-row: 1 / -1; align-self: center; }
-.qimg { grid-column: 4; grid-row: 1 / -1; align-self: center; }
-.meet-art { margin: 0; }
+/* images: row 1, directly above the headings, hugging the divider side */
+.mimg { grid-column: 1; grid-row: 1; justify-self: end; margin: 0 0 24px; }
+.qimg { grid-column: 2; grid-row: 1; justify-self: start; margin: 0 0 24px; }
+.meet-art { margin: 0; max-width: 260px; width: 100%; }
 .meet-art img { display: block; width: 100%; border: 1px solid var(--lavender-soft); border-radius: 3px; }
 .meet-art.img-missing::after { min-height: 0; aspect-ratio: 1 / 1; width: 100%; border-radius: 3px; }
 
 /* column + alignment (Munin mirrors to the divider, Quillon to the left) */
-.c-m { grid-column: 2; text-align: right; }
-.c-q { grid-column: 3; text-align: left; }
+.c-m { grid-column: 1; text-align: right; }
+.c-q { grid-column: 2; text-align: left; }
 
 /* shared rows: both columns' pieces sit in the same track, so they align */
-.r-head  { grid-row: 1; margin: 0; font-size: clamp(28px, 3.2vw, 40px); }
-.r-sub   { grid-row: 2; margin: 2px 0 0; }
-.r-intro { grid-row: 3; margin: 20px 0 0; }
-.r-list  { grid-row: 4; margin: 16px 0 0; }
-.r-close { grid-row: 5; margin: 18px 0 0; }
+.r-head  { grid-row: 2; margin: 0; font-size: clamp(28px, 3.2vw, 40px); }
+.r-sub   { grid-row: 3; margin: 2px 0 0; }
+.r-intro { grid-row: 4; margin: 18px 0 0; }
+.r-list  { grid-row: 5; margin: 16px 0 0; }
+.r-close { grid-row: 6; margin: 18px 0 0; }
 
 .meet-subhead {
   font-family: var(--display);
@@ -366,14 +367,14 @@ a, button { cursor: pointer; }
   /* stack: Munin block (image-first), then Quillon block (image-first) */
   .meet-grid { display: flex; flex-direction: column; }
   .c-m, .c-q { text-align: left; }
-  .meet-art { max-width: 320px; margin: 0 auto; }
-  .qimg { margin-top: 44px; }
-  .r-head { margin-top: 24px; }
+  .meet-art { max-width: 300px; }
+  .mimg, .qimg { justify-self: auto; margin: 0 auto; }
+  .qimg { margin-top: 48px; }
+  .r-head { margin-top: 18px; }
   .r-sub { margin-top: 4px; }
   .r-intro { margin-top: 18px; }
   .r-list { margin-top: 16px; }
   .r-close { margin-top: 18px; }
-  .mimg { margin-top: 0; }
   .hoard-list.c-m li { padding-left: 30px; padding-right: 0; }
   .hoard-list.c-m li::before { left: 4px; right: auto; }
 }
