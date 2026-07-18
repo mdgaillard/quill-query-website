@@ -431,7 +431,7 @@ a, button { cursor: pointer; }
 .archive-search:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 /* ---------- About Me row (home) ---------- */
-.about-me { padding-top: 84px; padding-bottom: 84px; }
+.about-me { padding-top: 50px; padding-bottom: 50px; }
 /* thin full-width decorative node banners framing the About Me section */
 .node-banner { width: 100%; margin: 0 auto; }
 .node-banner img { display: block; width: 100%; height: 64px; object-fit: cover; }
