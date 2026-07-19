@@ -553,7 +553,7 @@ a, button { cursor: pointer; }
   position: relative;
   max-width: 760px;
   margin: 0 auto;
-  padding: 76px 28px;
+  padding: 65px 28px;
   text-align: center;
 }
 .quote-band blockquote p {
