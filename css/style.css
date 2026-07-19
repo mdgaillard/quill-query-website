@@ -229,18 +229,18 @@ a, button { cursor: pointer; }
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  padding: 110px 28px 90px;
+  padding: 93px 28px 76px;
   text-align: center;
 }
 .hero h1 {
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(35px, 5.6vw, 60px);
-  line-height: 1.12;
+  font-size: clamp(31.5px, 5.04vw, 54px);
+  line-height: 0.95;
   color: var(--plum);
 }
 .hero h1 em { font-style: italic; color: var(--ink); }
-.hero .lede { margin: 26px auto 0; max-width: 560px; font-size: 19px; }
+.hero .lede { margin: 26px auto 0; max-width: 560px; font-size: 17px; line-height: 1.4; }
 
 .statline {
   font-family: var(--mono);
